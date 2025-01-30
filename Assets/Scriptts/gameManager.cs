@@ -26,7 +26,7 @@ public class gameManager : MonoBehaviour
     [Space]
 
     [Header("Scripts player and flag")]
-    [SerializeField] playerManager playerScript;
+    public playerManager playerScript;
     [SerializeField] flagRandomPosition flagScript;
 
     [Space]
@@ -72,9 +72,15 @@ public class gameManager : MonoBehaviour
     [Header("Jumpscare scene")]
     [SerializeField] GameObject jumpscareScene;
 
+    [Space]
+
+    [Header("Scene pause")]
+    public GameObject pauseScene;
+
     // Start is called before the first frame update
     void Start()
     {
+        pauseScene.SetActive(false);
         jumpscareScene.SetActive(false);
         devineInteruptionButton.SetActive(false);
         selectionOverlay.SetActive(true);

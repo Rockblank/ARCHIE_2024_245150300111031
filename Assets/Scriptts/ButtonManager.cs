@@ -18,6 +18,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI text2;
     [SerializeField] GameObject buttonStart;
     [SerializeField] Button buttonSetart;
+    [SerializeField] Button buttonPause;
 
     [Space]
 
@@ -36,6 +37,7 @@ public class ButtonManager : MonoBehaviour
 
     void Start()
     {
+        buttonPause.interactable = false;
         thisButton = GetComponent<Image>();
         textButton = GetComponentInChildren<TextMeshProUGUI>();
     }
@@ -93,6 +95,7 @@ public class ButtonManager : MonoBehaviour
                 Debug.Log("ok button get clicked");
                 managerGame.selectionOverlay.SetActive(false);
                 buttonSetart.enabled = true;
+                buttonPause.interactable = true;
             }
     }
 
@@ -130,5 +133,26 @@ public class ButtonManager : MonoBehaviour
         managerGame.devineSound();
         managerGame.isDevineInteruption = true;
         gameObject.GetComponent<Button>().interactable = false;
+    }
+
+    public void pauseButton()
+    {
+        buttonPause.interactable = false;
+        managerGame.pauseScene.SetActive(true);
+        managerGame.playerScript.enabled = false;
+        Time.timeScale = 0f;
+    }
+
+    public void resumeButton()
+    {
+        buttonPause.interactable = true;
+        managerGame.pauseScene.SetActive(false);
+        managerGame.playerScript.enabled = true;
+        Time.timeScale = 1f;
+    }
+
+    public void quitButton()
+    {
+        Application.Quit();
     }
 }
