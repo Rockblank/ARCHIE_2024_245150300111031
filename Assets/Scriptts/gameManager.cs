@@ -98,7 +98,7 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(levelPlayed >= 2 && lifeCount == 1 && devineActivate) 
+        if(levelPlayed >= 2 && lifeCount == 1 && devineActivate == true) 
         {
             devineInteruptionButton.SetActive(true);
         }

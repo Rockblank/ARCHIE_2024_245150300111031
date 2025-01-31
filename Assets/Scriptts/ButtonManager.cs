@@ -133,6 +133,7 @@ public class ButtonManager : MonoBehaviour
         managerGame.devineSound();
         managerGame.isDevineInteruption = true;
         gameObject.GetComponent<Button>().interactable = false;
+        managerGame.devineActivate = false;
     }
 
     public void pauseButton()

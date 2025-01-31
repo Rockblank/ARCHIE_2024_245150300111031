@@ -18307,7 +18307,6 @@ MonoBehaviour:
   ScoreText: {fileID: 1931892632}
   gameManager: {fileID: 2082495634}
   khususAdmin: {fileID: 1040137313}
-  divineButton: {fileID: 410117255}
 --- !u!1 &1689640223
 GameObject:
   m_ObjectHideFlags: 0
@@ -22721,6 +22720,7 @@ MonoBehaviour:
   scoreText: {fileID: 1971301940}
   devineInteruptionButton: {fileID: 410117255}
   isDevineInteruption: 0
+  devineActivate: 1
   audioSource: {fileID: 2082495635}
   foundFlag: {fileID: 8300000, guid: 3f290e6bf25ad4042a9dc71a190132c7, type: 3}
   hitWall: {fileID: 8300000, guid: f57b61a4e66155443a855f71b6cd7c0c, type: 3}
