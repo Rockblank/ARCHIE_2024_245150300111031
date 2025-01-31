@@ -54,6 +54,7 @@ public class gameManager : MonoBehaviour
     [Header("DEVine Interuptions settings")]
     [SerializeField] GameObject devineInteruptionButton;
     public bool isDevineInteruption = false;
+    public bool devineActivate;
 
     [Space]
 
@@ -77,6 +78,11 @@ public class gameManager : MonoBehaviour
     [Header("Scene pause")]
     public GameObject pauseScene;
 
+    void OnEnable()
+    {
+        devineActivate = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,7 +98,7 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(levelPlayed >= 2 && lifeCount == 1) 
+        if(levelPlayed >= 2 && lifeCount == 1 && devineActivate) 
         {
             devineInteruptionButton.SetActive(true);
         }
